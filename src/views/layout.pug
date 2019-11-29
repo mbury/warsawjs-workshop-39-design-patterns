@@ -1,0 +1,17 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/light.min.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    ul.list-horizontal
+      li
+        a(href=`/`) strona główna
+      if user
+        li
+          a(href=`/rentals`) historia wypożyczeń
+        li
+          span < #{user.name} > 
+          a(href=`/auth/logout`) wyloguj
+    block content

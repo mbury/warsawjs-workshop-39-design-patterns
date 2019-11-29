@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h1= title
+  p Zaloguj się do systemu jako:
+      ol
+        each user in users
+          li
+            a(href=`/auth/login/${user.user_id}`) #{user.name} (VIP: #{user.isVip})
+

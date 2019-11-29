@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  h1= title
+  table
+    tr
+      th Zamówienie
+      th Samochód
+      th Kaucja
+      th Status
+      th Akcje
+    each rental in rentals
+      tr
+        td= rental.rental_id
+        td= rental.car_id
+        td= rental.deposit
+        td= rental.status
+        td
+          a(href=`/rentals/${rental.rental_id}/pay-deposit`) opłać kaucje 
+          a(href=`/rentals/${rental.rental_id}/transfer-car`) przekaż samochód 
+          a(href=`/rentals/${rental.rental_id}/return-deposit`) zwróć kaucje 
+          a(href=`/rentals/${rental.rental_id}/return-car`) zwróć samochód 

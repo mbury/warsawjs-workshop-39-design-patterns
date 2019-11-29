@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  h1= title
+  table
+    tr
+      th Id
+      th Producent
+      th Model
+      th Cena
+      th Action
+    each car in cars
+      tr
+        td= car.car_id
+        td= car.make
+        td= car.model
+        td= car.price
+        td
+          a(href=`/cars/${car.car_id}/rent`) wynajmij

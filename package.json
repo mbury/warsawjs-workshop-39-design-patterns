@@ -1,0 +1,26 @@
+{
+  "name": "warsawjs-workshop-39-design-patterns",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "knex": "knex",
+    "db": "node ./bin/db",
+    "start": "nodemon ./bin/www"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "^4.1.1",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "http-errors": "^1.7.3",
+    "knex": "^0.20.3",
+    "morgan": "~1.9.1",
+    "pug": "^2.0.4",
+    "sqlite3": "^4.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.7.1",
+    "nodemon": "^2.0.1",
+    "prettier": "^1.19.1"
+  }
+}
