@@ -8,15 +8,17 @@ block content
       th Samochód
       th Kaucja
       th Status
-      th Akcje
     each rental in rentals
       tr
-        td= rental.rental_id
-        td= rental.car_id
-        td= rental.deposit
-        td= rental.status
+        td= rental.rental_id 
+        td        
+          span #{rental.car_id} 
+          br 
+          a(href=`/rentals/${rental.rental_id}/take-car`) odbierz 
+          a(href=`/rentals/${rental.rental_id}/return-car`) zwróć 
         td
-          a(href=`/rentals/${rental.rental_id}/pay-deposit`) opłać kaucje 
-          a(href=`/rentals/${rental.rental_id}/transfer-car`) przekaż samochód 
-          a(href=`/rentals/${rental.rental_id}/return-deposit`) zwróć kaucje 
-          a(href=`/rentals/${rental.rental_id}/return-car`) zwróć samochód 
+          span #{rental.deposit} 
+          br
+          a(href=`/rentals/${rental.rental_id}/pay-deposit`) opłać 
+          a(href=`/rentals/${rental.rental_id}/return-deposit`) zwróć
+        td= rental.state

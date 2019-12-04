@@ -43,13 +43,32 @@ module.exports.seed = async function(knex) {
     {
       user_id: 1,
       name: 'Jan Kowalski',
+      mail: 'jankowalski@warsaw.js',
       isVip: 0,
     },
     {
       user_id: 2,
       name: 'Robert Kubica',
+      mail: 'robertkubica@warsaw.js',
+
       isVip: 1,
     },
   ]);
+  await knex('reports').del();
+  await knex('reports').insert([
+    {
+      filename: '2019-01-01_HR_0.xyz',
+    },
+    {
+      filename: '2019-01-01_SALES_0.xyz',
+    },
+    {
+      filename: '2019-02-01_SALES_0.xyz',
+    },
+    {
+      filename: '2019-02-01_HR_0.xyz',
+    },
+  ]);
+
   await knex('rentals').del();
 };

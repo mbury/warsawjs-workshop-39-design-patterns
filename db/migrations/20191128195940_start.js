@@ -17,7 +17,7 @@ exports.up = function(knex) {
       table.integer('car_id').notNullable();
       table.integer('client_id').notNullable();
       table.integer('deposit').notNullable();
-      table.text('status').notNullable();
+      table.text('state').notNullable();
     })
     .createTable('users', function(table) {
       table
@@ -25,7 +25,14 @@ exports.up = function(knex) {
         .notNullable()
         .primary();
       table.text('name').notNullable();
+      table.text('mail').notNullable();
       table.integer('isVip').notNullable();
+    })
+    .createTable('reports', function(table) {
+      table
+        .text('filename')
+        .notNullable()
+        .primary();
     });
 };
 
@@ -33,5 +40,6 @@ exports.down = function(knex) {
   return knex.schema
     .dropTable('cars')
     .dropTable('rentals')
-    .dropTable('rentals');
+    .dropTable('users')
+    .dropTable('reports');
 };

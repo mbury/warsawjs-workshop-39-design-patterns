@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  h1= title
+  table
+    tr
+      th Data
+      th Dział
+      th Status
+      th Działanie
+    each report in reports
+      tr
+        td= report.date
+        td= report.department
+        if report.status == 0
+          td= 'OCZEKUJE'
+        if report.status == 1
+          td= 'ZAAKCEPTOWANY'
+        if report.status == 2
+          td= 'ODRZUCONY'
+        td
+          a(href=`/reports/${report.file}/accept`) akceptuj 
+          a(href=`/reports/${report.file}/reject`) odrzuć

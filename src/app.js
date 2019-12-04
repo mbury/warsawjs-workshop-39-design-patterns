@@ -9,6 +9,7 @@ var indexRouter = require('./routes/index');
 var carsRouter = require('./routes/cars');
 var authRouter = require('./routes/auth');
 var rentalsRouter = require('./routes/rentals');
+var reportsRouter = require('./routes/reports');
 
 var app = express();
 
@@ -57,6 +58,7 @@ function checkSignIn(req, res, next) {
 
 app.use('/cars', checkSignIn, carsRouter);
 app.use('/rentals', checkSignIn, rentalsRouter);
+app.use('/reports', reportsRouter);
 app.use('/auth', authRouter);
 app.use('/', checkSignIn, indexRouter);
 

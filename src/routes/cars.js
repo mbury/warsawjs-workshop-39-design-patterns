@@ -35,7 +35,7 @@ router.get('/:car_id/rent', async function(req, res) {
     car_id,
     client_id,
     deposit,
-    status: 'RESERVED',
+    state: 'RESERVED',
   });
 
   res.redirect('/rentals');
